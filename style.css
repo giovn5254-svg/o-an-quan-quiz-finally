@@ -1,0 +1,432 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: #f8ead1;
+    background:
+        radial-gradient(circle at top, #30384b 0%, #171b27 55%);
+}
+
+button {
+    font-family: inherit;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 7%;
+    background: #202637;
+    border-bottom: 1px solid #41475a;
+}
+
+.logo {
+    color: #f5bd62;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.sound-btn {
+    padding: 10px 14px;
+    border: 1px solid #68748a;
+    border-radius: 20px;
+    background: #343e52;
+    color: white;
+    cursor: pointer;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 35px auto;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.eyebrow {
+    color: #e7ad58;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.intro h1 {
+    margin: 12px 0;
+    color: #f5d49c;
+    font-size: clamp(27px, 5vw, 43px);
+}
+
+.intro p:last-child {
+    color: #b9c0cf;
+    font-size: 14px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.stat {
+    padding: 17px;
+    text-align: center;
+    border: 1px solid #414d63;
+    border-radius: 14px;
+    background: #252e40;
+}
+
+.stat span {
+    display: block;
+    color: #b9c0cf;
+    font-size: 12px;
+}
+
+.stat strong {
+    display: block;
+    margin-top: 7px;
+    color: #f5bd62;
+    font-size: 27px;
+}
+
+.game-panel,
+.question-panel,
+.rules {
+    padding: 23px;
+    border: 1px solid #414d63;
+    border-radius: 18px;
+    background: #252e40;
+    box-shadow: 0 12px 30px #0003;
+}
+
+.board-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.board-heading h2 {
+    color: #f5d49c;
+    font-size: 20px;
+}
+
+#gameStatus {
+    color: #e7ad58;
+    font-size: 12px;
+    text-align: right;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: 90px 1fr 90px;
+    align-items: center;
+    gap: 12px;
+    padding: 18px;
+    border: 8px solid #593720;
+    border-radius: 28px;
+    background: linear-gradient(135deg, #a66d3e, #754729);
+    box-shadow: inset 0 0 18px #321b0d;
+}
+
+.people-pits {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.pit {
+    min-width: 0;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 4px solid #694329;
+    border-radius: 50%;
+    color: #f5d49c;
+    background: radial-gradient(circle at 35% 30%, #60452f, #241a15 75%);
+    box-shadow: inset 0 5px 13px #000a, 0 3px 5px #0005;
+    cursor: pointer;
+    transition: transform .2s, border-color .2s, background .2s;
+}
+
+.pit:hover:not(:disabled) {
+    transform: translateY(-4px);
+    border-color: #f2c276;
+}
+
+.pit:disabled {
+    cursor: not-allowed;
+    opacity: .65;
+}
+
+.pit.selected {
+    border-color: #fff0a6;
+    box-shadow: 0 0 0 4px #f2c27655, inset 0 5px 13px #000a;
+}
+
+.pit.quan {
+    border: 5px solid #d7a64f;
+    background: radial-gradient(circle at 35% 30%, #79562b, #302014 75%);
+}
+
+.pit-name {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.pieces {
+    display: grid;
+    place-items: center;
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    color: #2b1c10;
+    background: #e6bd7c;
+    font-size: 15px;
+    font-weight: 800;
+    box-shadow: inset 0 2px 3px #fff8, 0 2px 4px #0008;
+}
+
+.quan .pieces {
+    color: #35210b;
+    background: #f3cf69;
+}
+
+.board-legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 17px 0;
+    color: #c3c9d4;
+    font-size: 12px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 12px 23px;
+    border: none;
+    border-radius: 9px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.primary-btn {
+    color: #211a14;
+    background: #e4ad5b;
+}
+
+.primary-btn:hover {
+    background: #f5c77c;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    color: #f5d49c;
+    background: #3a465c;
+    border: 1px solid #68748a;
+}
+
+.secondary-btn:hover {
+    background: #4b5870;
+}
+
+.message {
+    min-height: 24px;
+    margin-top: 17px;
+    color: #c5d5cb;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.question-panel {
+    margin-top: 22px;
+}
+
+.question-label {
+    color: #e7ad58;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.question-panel h2 {
+    margin: 13px 0 18px;
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+.answer-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 11px;
+}
+
+.answer {
+    padding: 14px;
+    border: 1px solid #56637a;
+    border-radius: 10px;
+    color: white;
+    background: #343e52;
+    text-align: left;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.answer:hover:not(:disabled) {
+    border-color: #e7ad58;
+    background: #46536b;
+}
+
+.answer:disabled {
+    cursor: default;
+}
+
+.answer.correct {
+    border-color: #61bd8c;
+    background: #245a43;
+}
+
+.answer.wrong {
+    border-color: #e57c7c;
+    background: #703c42;
+}
+
+.placeholder {
+    grid-column: 1 / -1;
+    color: #aeb8c9;
+    font-size: 13px;
+}
+
+.feedback {
+    margin-top: 16px;
+    color: #c5d5cb;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.rules {
+    margin-top: 22px;
+}
+
+.rules h3 {
+    margin-bottom: 13px;
+    color: #f5d49c;
+}
+
+.rules ol {
+    padding-left: 21px;
+    color: #c2cad8;
+    font-size: 13px;
+    line-height: 2;
+}
+
+footer {
+    padding: 25px;
+    color: #778195;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 700px) {
+    .header {
+        padding: 14px 4%;
+    }
+
+    .container {
+        width: 94%;
+        margin: 24px auto;
+    }
+
+    .board {
+        grid-template-columns: 55px 1fr 55px;
+        gap: 5px;
+        padding: 10px 5px;
+        border-width: 5px;
+    }
+
+    .people-pits {
+        gap: 4px;
+    }
+
+    .pit {
+        border-width: 2px;
+        gap: 4px;
+    }
+
+    .pit.quan {
+        border-width: 3px;
+    }
+
+    .pit-name {
+        font-size: 7px;
+        letter-spacing: 0;
+    }
+
+    .pieces {
+        width: 23px;
+        height: 23px;
+        font-size: 12px;
+    }
+
+    .stats {
+        gap: 7px;
+    }
+
+    .stat {
+        padding: 12px 5px;
+    }
+
+    .stat span {
+        font-size: 10px;
+    }
+
+    .stat strong {
+        font-size: 21px;
+    }
+
+    .game-panel,
+    .question-panel,
+    .rules {
+        padding: 15px;
+    }
+
+    .answer-list {
+        grid-template-columns: 1fr;
+    }
+
+    .board-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #gameStatus {
+        text-align: left;
+    }
+}

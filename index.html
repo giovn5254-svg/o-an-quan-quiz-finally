@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ô Ăn Quan - Điểm Chạm Văn Hóa Việt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">🏮 Ô ĂN QUAN</div>
+        <button id="soundBtn" class="sound-btn">🔊 Âm thanh: Bật</button>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <p class="eyebrow">HÀNH TRÌNH KHÁM PHÁ</p>
+            <h1>Điểm Chạm Văn Hóa Việt</h1>
+            <p>Rải quân, giải đố và khám phá những giá trị văn hóa Việt Nam.</p>
+        </section>
+
+        <section class="stats">
+            <div class="stat">
+                <span>⭐ Điểm số</span>
+                <strong id="score">0</strong>
+            </div>
+            <div class="stat">
+                <span>🪙 Quân đã ăn</span>
+                <strong id="collected">0</strong>
+            </div>
+            <div class="stat">
+                <span>🔄 Lượt chơi</span>
+                <strong id="turn">0</strong>
+            </div>
+        </section>
+
+        <section class="game-panel">
+            <div class="board-heading">
+                <h2>Bàn Ô Ăn Quan</h2>
+                <span id="gameStatus">Nhấn Bắt đầu để chơi</span>
+            </div>
+
+            <div class="board">
+                <button class="pit quan" data-pit="10" aria-label="Ô quan trái">
+                    <span class="pit-name">QUAN</span>
+                    <span class="pieces" id="pieces-10">0</span>
+                </button>
+
+                <div class="people-pits">
+                    <button class="pit" data-pit="0"><span class="pit-name">Ô 1</span><span class="pieces" id="pieces-0">5</span></button>
+                    <button class="pit" data-pit="1"><span class="pit-name">Ô 2</span><span class="pieces" id="pieces-1">5</span></button>
+                    <button class="pit" data-pit="2"><span class="pit-name">Ô 3</span><span class="pieces" id="pieces-2">5</span></button>
+                    <button class="pit" data-pit="3"><span class="pit-name">Ô 4</span><span class="pieces" id="pieces-3">5</span></button>
+                    <button class="pit" data-pit="4"><span class="pit-name">Ô 5</span><span class="pieces" id="pieces-4">5</span></button>
+                    <button class="pit" data-pit="5"><span class="pit-name">Ô 6</span><span class="pieces" id="pieces-5">5</span></button>
+                    <button class="pit" data-pit="6"><span class="pit-name">Ô 7</span><span class="pieces" id="pieces-6">5</span></button>
+                    <button class="pit" data-pit="7"><span class="pit-name">Ô 8</span><span class="pieces" id="pieces-7">5</span></button>
+                    <button class="pit" data-pit="8"><span class="pit-name">Ô 9</span><span class="pieces" id="pieces-8">5</span></button>
+                    <button class="pit" data-pit="9"><span class="pit-name">Ô 10</span><span class="pieces" id="pieces-9">5</span></button>
+                </div>
+
+                <button class="pit quan" data-pit="11" aria-label="Ô quan phải">
+                    <span class="pit-name">QUAN</span>
+                    <span class="pieces" id="pieces-11">0</span>
+                </button>
+            </div>
+
+            <div class="board-legend">
+                <span>🟤 Ô dân: câu hỏi thường</span>
+                <span>🟡 Ô quan: câu hỏi thử thách</span>
+            </div>
+
+            <div class="controls">
+                <button id="startBtn" class="primary-btn">▶ Bắt đầu</button>
+                <button id="restartBtn" class="secondary-btn">↻ Chơi lại</button>
+            </div>
+            <p id="message" class="message">Nhấn Bắt đầu, sau đó chọn một ô dân có quân.</p>
+        </section>
+
+        <section class="question-panel" id="questionPanel">
+            <div class="question-label" id="questionType">THỬ THÁCH</div>
+            <h2 id="questionTitle">Câu hỏi sẽ xuất hiện tại đây</h2>
+            <div id="answerList" class="answer-list">
+                <p class="placeholder">Hãy bắt đầu trò chơi để khám phá.</p>
+            </div>
+            <p id="questionFeedback" class="feedback"></p>
+        </section>
+
+        <section class="rules">
+            <h3>📜 Hướng dẫn chơi</h3>
+            <ol>
+                <li>Nhấn Bắt đầu và chọn một ô dân có quân.</li>
+                <li>Quân được rải từng hạt theo chiều ngược kim đồng hồ.</li>
+                <li>Nếu ô kế tiếp có quân, nhặt quân và tiếp tục rải.</li>
+                <li>Nếu ô kế tiếp trống, xét ô sau nó. Có quân thì trả lời câu hỏi để ăn quân.</li>
+                <li>Trả lời đúng mới được cộng điểm. Ô quan có câu hỏi khó hơn.</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>ĐIỂM CHẠM VĂN HÓA VIỆT · TRÒ CHƠI HỌC TẬP</footer>
+    <script src="script.js"></script>
+</body>
+</html>
